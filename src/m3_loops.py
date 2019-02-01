@@ -6,8 +6,8 @@ This problem provides practice at:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and John Neill.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -46,7 +46,7 @@ def main():
 def run_test_practice_problem3():
     """ Tests the   practice_problem3  function. """
     ###########################################################################
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  practice_problem3  function defined below.
     #   Include at least ** 2 ** ADDITIONAL tests beyond those we wrote.
     #
@@ -89,6 +89,10 @@ def run_test_practice_problem3():
              st.SimpleTestCase(practice_problem3,
                                [-5, 7, 0.25],
                                [-5, 0, 1, 2, 6, 7, 8]),
+             #my test:
+             st.SimpleTestCase(practice_problem3,
+                               [0, 4, 0.4],
+                               [0, 1, 2, 6]),
              st.SimpleTestCase(practice_problem3,
                                [-3, 3, -1.0],
                                [-1, 0, 1]),
@@ -110,6 +114,7 @@ def run_test_practice_problem3():
              st.SimpleTestCase(practice_problem3,
                                [0, 1, 1.414213562373],
                                [286602]),
+
              ]
     # 14th test:
     big_list = []
@@ -125,6 +130,7 @@ def run_test_practice_problem3():
     # -------------------------------------------------------------------------
     st.SimpleTestCase.run_tests('practice_problem3', tests)
 
+
     ###########################################################################
     # TO DO 2 continued:  More tests:
     #      YOU add at least **   2   ** additional tests here.
@@ -138,6 +144,17 @@ def run_test_practice_problem3():
 
 
 def practice_problem3(start, n, threshold):
+
+    list = []
+    for k in range(start, 99999999):
+        if (n == 0):
+            return []
+        if math.sin(k) + math.cos(k) > threshold:
+            list += [k]
+        if len(list) >= n:
+            return list
+
+
     """
     What comes in:
       -- An integer:  start
@@ -209,7 +226,7 @@ def practice_problem3(start, n, threshold):
       :type threshold: float
     """
     ###########################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Some tests are already written for you (above),
     #          but you are required to write ADDITIONAL tests (above).
     ###########################################################################
